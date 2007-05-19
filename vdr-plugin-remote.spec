@@ -1,8 +1,8 @@
 
 %define plugin	remote
 %define name	vdr-plugin-%plugin
-%define version	0.3.8
-%define rel	4
+%define version	0.3.9
+%define rel	1
 
 Summary:	VDR plugin: Remote control
 Name:		%name
