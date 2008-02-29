@@ -1,8 +1,8 @@
 
 %define plugin	remote
 %define name	vdr-plugin-%plugin
-%define version	0.3.9
-%define rel	5
+%define version	0.4.0
+%define rel	1
 
 Summary:	VDR plugin: Remote control
 Name:		%name
@@ -11,7 +11,7 @@ Release:	%mkrel %rel
 Group:		Video
 License:	GPL
 URL:		http://www.escape-edv.de/endriss/vdr/
-Source:		http://www.escape-edv.de/endriss/vdr/vdr-%plugin-%version.tar.bz2
+Source:		http://www.escape-edv.de/endriss/vdr/vdr-%plugin-%version.tgz
 BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.4.1-6
 Requires:	vdr-abi = %vdr_abi
