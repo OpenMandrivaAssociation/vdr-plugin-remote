@@ -2,7 +2,7 @@
 %define plugin	remote
 %define name	vdr-plugin-%plugin
 %define version	0.4.0
-%define rel	1
+%define rel	2
 
 Summary:	VDR plugin: Remote control
 Name:		%name
@@ -12,8 +12,9 @@ Group:		Video
 License:	GPL
 URL:		http://www.escape-edv.de/endriss/vdr/
 Source:		http://www.escape-edv.de/endriss/vdr/vdr-%plugin-%version.tgz
+Patch0:		90_remote-0.4.0-1.5.7.dpatch
 BuildRoot:	%{_tmppath}/%{name}-buildroot
-BuildRequires:	vdr-devel >= 1.4.1-6
+BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
 
 %description
@@ -35,6 +36,8 @@ The following remote control devices are supported:
 
 %prep
 %setup -q -n %plugin-%version
+%patch0 -p1
+%vdr_plugin_prep
 
 %vdr_plugin_params_begin %plugin
 # Select an input device using evdev protocol
@@ -73,5 +76,3 @@ rm -rf %{buildroot}
 %files -f %plugin.vdr
 %defattr(-,root,root)
 %doc README HISTORY CONTRIBUTORS FAQ 
-
-
