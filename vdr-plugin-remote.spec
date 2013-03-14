@@ -2,7 +2,7 @@
 %define plugin	remote
 %define name	vdr-plugin-%plugin
 %define version	0.4.0
-%define rel	5
+%define rel	6
 
 Summary:	VDR plugin: Remote control
 Name:		%name
@@ -13,7 +13,6 @@ License:	GPL
 URL:		http://www.escape-edv.de/endriss/vdr/
 Source:		http://www.escape-edv.de/endriss/vdr/vdr-%plugin-%version.tgz
 Patch0:		90_remote-0.4.0-1.5.7.dpatch
-BuildRoot:	%{_tmppath}/%{name}-buildroot
 BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
 
@@ -61,17 +60,7 @@ param="-p tcp:TCP_PORT"
 %vdr_plugin_build
 
 %install
-rm -rf %{buildroot}
 %vdr_plugin_install
-
-%clean
-rm -rf %{buildroot}
-
-%post
-%vdr_plugin_post %plugin
-
-%postun
-%vdr_plugin_postun %plugin
 
 %files -f %plugin.vdr
 %defattr(-,root,root)
