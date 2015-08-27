@@ -1,17 +1,13 @@
-
 %define plugin	remote
-%define name	vdr-plugin-%plugin
-%define version	0.4.0
-%define rel	6
 
 Summary:	VDR plugin: Remote control
-Name:		%name
-Version:	%version
-Release:	%mkrel %rel
+Name:		vdr-plugin-%plugin
+Version:	0.4.0
+Release:	7
 Group:		Video
 License:	GPL
 URL:		http://www.escape-edv.de/endriss/vdr/
-Source:		http://www.escape-edv.de/endriss/vdr/vdr-%plugin-%version.tgz
+Source:		http://www.escape-edv.de/endriss/vdr/vdr-%plugin-%{version}.tgz
 Patch0:		90_remote-0.4.0-1.5.7.dpatch
 BuildRequires:	vdr-devel >= 1.6.0
 Requires:	vdr-abi = %vdr_abi
@@ -34,7 +30,7 @@ The following remote control devices are supported:
 (d) LIRC
 
 %prep
-%setup -q -n %plugin-%version
+%setup -q -n %plugin-%{version}
 %patch0 -p1
 %vdr_plugin_prep
 
@@ -63,73 +59,6 @@ param="-p tcp:TCP_PORT"
 %vdr_plugin_install
 
 %files -f %plugin.vdr
-%defattr(-,root,root)
 %doc README HISTORY CONTRIBUTORS FAQ 
 
-
-%changelog
-* Tue Jul 28 2009 Anssi Hannula <anssi@mandriva.org> 0.4.0-5mdv2010.0
-+ Revision: 401088
-- rebuild for new VDR
-
-* Fri Mar 20 2009 Anssi Hannula <anssi@mandriva.org> 0.4.0-4mdv2009.1
-+ Revision: 359359
-- rebuild for new vdr
-
-* Mon Apr 28 2008 Anssi Hannula <anssi@mandriva.org> 0.4.0-3mdv2009.0
-+ Revision: 197971
-- rebuild for new vdr
-
-* Sat Apr 26 2008 Anssi Hannula <anssi@mandriva.org> 0.4.0-2mdv2009.0
-+ Revision: 197716
-- add vdr_plugin_prep
-- bump buildrequires on vdr-devel
-- adapt for api changes of VDR 1.5.7 (P0 from e-tobi)
-
-* Fri Feb 29 2008 Anssi Hannula <anssi@mandriva.org> 0.4.0-1mdv2008.1
-+ Revision: 176581
-- new version
-
-* Fri Jan 04 2008 Anssi Hannula <anssi@mandriva.org> 0.3.9-5mdv2008.1
-+ Revision: 145195
-- rebuild for new vdr
-
-  + Olivier Blin <oblin@mandriva.com>
-    - restore BuildRoot
-
-  + Thierry Vignaud <tv@mandriva.org>
-    - kill re-definition of %%buildroot on Pixel's request
-
-* Mon Oct 29 2007 Anssi Hannula <anssi@mandriva.org> 0.3.9-4mdv2008.1
-+ Revision: 103193
-- rebuild for new vdr
-
-* Sun Jul 08 2007 Anssi Hannula <anssi@mandriva.org> 0.3.9-3mdv2008.0
-+ Revision: 50039
-- rebuild for new vdr
-
-* Thu Jun 21 2007 Anssi Hannula <anssi@mandriva.org> 0.3.9-2mdv2008.0
-+ Revision: 42125
-- rebuild for new vdr
-
-* Sat May 19 2007 Anssi Hannula <anssi@mandriva.org> 0.3.9-1mdv2008.0
-+ Revision: 28473
-- 0.3.9
-
-* Sat May 05 2007 Anssi Hannula <anssi@mandriva.org> 0.3.8-4mdv2008.0
-+ Revision: 22677
-- rebuild for new vdr
-
-
-* Tue Dec 05 2006 Anssi Hannula <anssi@mandriva.org> 0.3.8-3mdv2007.0
-+ Revision: 90967
-- rebuild for new vdr
-
-* Tue Oct 31 2006 Anssi Hannula <anssi@mandriva.org> 0.3.8-2mdv2007.1
-+ Revision: 74078
-- rebuild for new vdr
-- Import vdr-plugin-remote
-
-* Thu Aug 03 2006 Anssi Hannula <anssi@mandriva.org> 0.3.8-1mdv2007.0
-- initial Mandriva release
 
