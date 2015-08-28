@@ -3,7 +3,7 @@
 Summary:	VDR plugin: Remote control
 Name:		vdr-plugin-%plugin
 Version:	0.4.0
-Release:	7
+Release:	8
 Group:		Video
 License:	GPL
 URL:		http://www.escape-edv.de/endriss/vdr/
