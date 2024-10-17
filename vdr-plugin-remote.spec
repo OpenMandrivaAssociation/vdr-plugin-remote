@@ -6,7 +6,7 @@ Version:	0.4.0
 Release:	8
 Group:		Video
 License:	GPL
-URL:		http://www.escape-edv.de/endriss/vdr/
+URL:		https://www.escape-edv.de/endriss/vdr/
 Source:		http://www.escape-edv.de/endriss/vdr/vdr-%plugin-%{version}.tgz
 Patch0:		90_remote-0.4.0-1.5.7.dpatch
 BuildRequires:	vdr-devel >= 1.6.0
